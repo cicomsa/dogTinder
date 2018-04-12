@@ -4,11 +4,9 @@ import './buttonNo.css'
 import {randomImage} from '../actions/randomImage'
 
 class ButtonNo extends PureComponent {
-
+  
   unlike() {
-
     this.props.dispatch(randomImage())
-
   }
 
   render() {

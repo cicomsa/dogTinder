@@ -1,5 +1,7 @@
 const express = require('express')
 const app = express()
+const usersRouter = require('./users/router')
+const bodyParser = require('body-parser')
 
 app.listen(4001, () => console.log('Express API listening on port 4001'))
 
