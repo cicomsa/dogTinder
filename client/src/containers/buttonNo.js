@@ -1,9 +1,12 @@
 import React, {PureComponent} from 'react'
+import {connect} from 'react-redux'
 import './buttonNo.css'
+import {randomImage} from '../actions/randomImage'
 
 class ButtonNo extends PureComponent {
+  
   unlike() {
-    console.log('test')
+    this.props.dispatch(randomImage())
   }
 
   render() {
@@ -15,4 +18,10 @@ class ButtonNo extends PureComponent {
   }
 }
 
-export default ButtonNo;
+const mapStateToProps = function (state) {
+  return {
+     showImage: state.randomImage.message
+   }
+}
+
+export default connect(mapStateToProps)(ButtonNo)
