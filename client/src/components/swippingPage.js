@@ -2,6 +2,9 @@
 import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
 import './swippingPage.css'
+import RandomImage from '../containers/randomImage'
+import ButtonNo from '../containers/buttonNo'
+import ButtonYes from '../containers/buttonYes'
 
 class SwippingPage extends PureComponent {
   static PropTypes = {
@@ -19,12 +22,12 @@ class SwippingPage extends PureComponent {
         </div>
 
         <div className="card">
-          {this.props.src}
+          <RandomImage/>
         </div>
 
         <div className="buttons">
-          <button className="buttonNo"><i class="fas fa-times"></i></button>
-          <button className="buttonYes"><i class="fas fa-heart"></i></button>
+          <ButtonNo/>
+          <ButtonYes/>
         </div>
 
       </div>

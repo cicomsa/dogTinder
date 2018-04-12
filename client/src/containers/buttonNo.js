@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react'
+import './buttonNo.css'
 
 class ButtonNo extends PureComponent {
   unlike() {
@@ -8,7 +9,7 @@ class ButtonNo extends PureComponent {
   render() {
     return (
       <div>
-        <button type="button" onClick={() => this.unlike()}>NO</button>
+        <button className="buttonNo" type="button" onClick={() => this.unlike()}><i class="fas fa-times"></i></button>
       </div>
     );
   }

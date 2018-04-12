@@ -1,29 +1,23 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import './buttonYes.css'
 
+export default class ButtonYes extends PureComponent {
 
-
-
-export class ButtonYes extends PureComponent {
-
-      
-
-    clickHandler = () => {
-	console.log("Clicked")
-
+  clickHandler = () => {
+	   console.log("Clicked")
     }
-    
+
     render() {
-	return(
-	    <div className="ButtonYes">
-	    <button onClick ={this.clickHandler}>YES</button>
-
-		</div>
-	)
+	     return(
+	        <div>
+	         <button className="buttonYes" onClick ={this.clickHandler}><i class="fas fa-heart"></i></button>
+          </div>
+	       )
     }
-    }
+}
 
 
 
-//export default connect(mapStateToProps)(ButtonYes) 
+//export default connect(mapStateToProps)(ButtonYes)

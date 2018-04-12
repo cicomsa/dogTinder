@@ -1,0 +1,11 @@
+.buttonNo {
+  font-size: 40px;
+  text-align: center;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  color: rgb(255, 0, 104);
+  margin-right: 20px;
+  background-color: #fff;
+  border: 1px solid rgb(183, 183, 183);
+}

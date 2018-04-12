@@ -19,9 +19,9 @@ class RandomImage extends PureComponent {
 }
 
 const mapStateToProps = function (state) {
-	return {
-		showImage: state.randomImage.message
-	}
+  return {
+     showImage: state.randomImage.message
+   }
 }
 
 export default connect(mapStateToProps, { randomImage })(RandomImage)
