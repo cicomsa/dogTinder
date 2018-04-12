@@ -3,17 +3,10 @@ const app = express()
 // const usersRouter = require('./users/router')
 const Sequelize = require('sequelize')
 // const sequelize = require('../db')
-// const bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 const sequelize = new Sequelize('postgres://postgres:secret@localhost:5432/postgres')
 
-app.listen(4001, () => console.log('Express API listening on port 4001'))
-
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
-  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
-  next()
-})
+app.use(bodyParser.json())
 
 const Users = sequelize.define('users', {
   id: {
@@ -23,15 +16,26 @@ const Users = sequelize.define('users', {
   },
   name: {
     type: Sequelize.STRING,
+    allowNull: true
 
   },
   preferences: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.INTEGER, //type: Sequelize.ARRAY(Sequelize.STRING)
+    allowNull: true
 
   }},
   {tableName: 'users',
   timestamps: false}
 )
+
+app.listen(4001, () => console.log('Express API listening on port 4001'))
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization')
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE')
+  next()
+})
 
 app.get('/users', (req, res) => {
   	Users.findAll({
@@ -74,27 +78,27 @@ app.get('/users/:id', (req, res) => {
 //     })
 // })
 
-// app.put('/users/:id', (req, res) => {
-//     const userId = Number(req.params.id)
-//     const updates = req.body
-//
-//       // find the user in the DB
-//     Users.findById(req.params.id)
-//         .then(entity => {
-//           // change the user and store in DB
-//           return entity.update(updates)
-//         })
-//         .then(final => {
-//           // respond with the changed product and status code 200 OK
-//           res.send(final)
-//         })
-//         .catch(error => {
-//           res.status(500).send({
-//             message: `Something went wrong`,
-//             error
-//           })
-//         })
-// })
+app.put('/users/:id', (req, res) => {
+    const userId = Number(req.params.id)
+    const updates = req.body
+
+      // find the user in the DB
+    Users.findById(userId)
+        .then(preferences => {
+          // change the user and store in DB
+          return preferences.update(updates)
+        })
+        .then(final => {
+          // respond with the changed product and status code 200 OK
+          res.send(final)
+        })
+        .catch(error => {
+          res.status(500).send({
+            message: `Something went wrong`,
+            error
+          })
+        })
+})
 
 // app.delete('/users/:id', (req, res) => {
 //     const usersId = Number(req.params.id)
