@@ -1,22 +1,33 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import './buttonYes.css'
 import { randomImage } from '../actions/randomImage'
-
-
+import { randomImage1 } from '../actions/randomImage1'
+import { updatePreferences} from "../actions/buttonYes";
+const userId = 1;
 
 class ButtonYes extends PureComponent {
-   
+
+
 like() {
-	this.props.dispatch(randomImage())    
-    
+  this.props.updatePreferences(userId)
+	this.props.randomImage()
+  this.props.randomImage1()
     }
 
+
+
+
+
     render() {
+
+      let im = this.props.images
+      let joined = im.length
 	     return(
 	        <div>
-	             <button className="buttonYes" onClick ={() => this.like()}><i class="fas fa-heart"></i></button>
+	            <button className="buttonYes" onClick ={() => this.like()}><i className="fas fa-heart"></i></button>
+              <p>{joined}</p>
+
           </div>
 	       )
     }
@@ -25,7 +36,8 @@ like() {
 const mapStateToProps = function (state) {
 
     return {
-	showImage: state.randomImage.message
-    }
+	     showImage: state.randomImage,
+       images: state.randomImage1
+     }
 }
-export default connect(mapStateToProps)(ButtonYes)
+export default connect(mapStateToProps, {updatePreferences, randomImage1, randomImage})(ButtonYes)
