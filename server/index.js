@@ -43,7 +43,7 @@ app.get('/users', (req, res) => {
   	})
   	  .then(result => {
   	    res.send({
-  	    	users: result
+  	    	users: result.preferences
   	    })
   	  })
   	  .catch(err => {
