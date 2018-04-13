@@ -80,13 +80,15 @@ app.get('/users/:id', (req, res) => {
 
 app.put('/users/:id', (req, res) => {
     const userId = Number(req.params.id)
-    const updates = req.body
+    // const updates = req.body
 
       // find the user in the DB
     Users.findById(userId)
-        .then(preferences => {
+        .then(() => {
+        // .then(model => {
           // change the user and store in DB
-          return preferences.update(updates)
+          // return model.update(updates)
+          return Users.update({preferences: Sequelize.literal('preferences + 1')}, { where: {id: userId}})
         })
         .then(final => {
           // respond with the changed product and status code 200 OK
