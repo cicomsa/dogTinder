@@ -20,13 +20,12 @@ like() {
 
 
     render() {
-
       let im = this.props.images
-      let joined = im.length
+      let doggyLover = im.length
 	     return(
 	        <div>
 	            <button className="buttonYes" onClick ={() => this.like()}><i className="fas fa-heart"></i></button>
-              <p>{joined}</p>
+              <p>{doggyLover}</p>
 
           </div>
 	       )
