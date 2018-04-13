@@ -4,7 +4,7 @@ import './buttonNo.css'
 import {randomImage} from '../actions/randomImage'
 
 class ButtonNo extends PureComponent {
-  
+
   unlike() {
     this.props.dispatch(randomImage())
   }
@@ -12,7 +12,7 @@ class ButtonNo extends PureComponent {
   render() {
     return (
       <div>
-        <button className="buttonNo" type="button" onClick={() => this.unlike()}><i class="fas fa-times"></i></button>
+        <button className="buttonNo" type="button" onClick={() => this.unlike()}><i className="fas fa-times"></i></button>
       </div>
     );
   }
