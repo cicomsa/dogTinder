@@ -1,6 +1,6 @@
-const usersArray = [
+ /*usersArray = [
   {name: 'wouter', likes: 1},
-  {name: 'henk', likes: 5},
+  {constname: 'henk', likes: 5},
   {name: 'mimi', likes: 6},
   {name: 'arno', likes: 8},
   {name: 'jan', likes: 2},
@@ -18,4 +18,4 @@ const array2 = usersArray.map(a => a.likes);
 var newArray = array1.map((e, i) => e + `: ${array2[i]}`);
 console.log(newArray);
 
-console.log(newArray)
+console.log(newArray)*/
