@@ -1,10 +1,10 @@
 
-import {FETCHED_IMAGES} from '../actions/index'
+import {CONCAT_IMAGES} from '../actions/index'
 
 export default function (state = [], action) {
 	switch (action.type) {
 
-		case FETCHED_IMAGES:
+		case CONCAT_IMAGES:
 
 			return state.concat(action.payload)
 

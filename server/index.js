@@ -8,7 +8,7 @@ const sequelize = new Sequelize('postgres://postgres:secret@localhost:5432/postg
 
 app.use(bodyParser.json())
 
-const Users = sequelize.define('users', {
+const Users = sequelize.define('user', {
   id: {
     type: Sequelize.INTEGER,
     allowNull: false,
@@ -66,6 +66,7 @@ app.get('/users/:id', (req, res) => {
     	    res.status(500).send({error: 'Something went wrong with Postgres'})
     	  })
 })
+
 
 // app.post('/users', (req, res) => {
 //     const users = req.body
