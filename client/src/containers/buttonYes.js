@@ -12,7 +12,7 @@ class ButtonYes extends PureComponent {
 
   like() {
     this.props.updatePreferences(userId)
-  	this.props.randomImage()
+    this.props.randomImage()
     this.props.concatImages()
     this.props.fetchUser(2)
   }
@@ -30,9 +30,9 @@ class ButtonYes extends PureComponent {
 const mapStateToProps = function (state) {
 
     return {
-	     showImage: state.randomImage,
+       showImage: state.randomImage,
        images: state.concatImages,
        fetch:state.fetchUser
      }
 }
-export default connect(mapStateToProps, {updatePreferences, concatImages, fetchUser,randomImage})(ButtonYes)
+export default connect(mapStateToProps, {updatePreferences, concatImages, fetchUser, randomImage})(ButtonYes)
