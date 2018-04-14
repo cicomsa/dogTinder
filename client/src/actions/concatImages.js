@@ -1,13 +1,13 @@
 import * as request from 'superagent'
-import {FETCHED_IMAGES} from './index'
+import {CONCAT_IMAGES} from './index'
 
 const baseUrl = 'https://dog.ceo/api/breeds/image/random'
 
-export const randomImage1 = (message) => (dispatch) => {
+export const concatImages = (message) => (dispatch) => {
   request
     .get(`${baseUrl}`)
     .then(response => dispatch({
-      type: FETCHED_IMAGES,
+      type: CONCAT_IMAGES,
       payload: response.body.message
     }))
     .catch(err => console.log(err))

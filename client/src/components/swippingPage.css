@@ -1,14 +1,25 @@
+* Tinder */
+.tinder {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* Homepage */
 .homepage {
   min-height: 693px;
 }
-.navigation {
+.homepage .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: white;
   border-bottom: 2px outset rgb(149, 149, 149);
-  padding: 0 10px 0 10px;
-  font-size: 30px;
+  padding: 0 15px;
+  font-size: 40px;
+}
+.navigation i {
+  color: black;
 }
 .navigation img {
   width: 60px;
@@ -21,4 +32,55 @@
 .buttons {
   display: flex;
   justify-content: center;
+}
+
+/* MatchesPage */
+.matchesPage {
+  min-height: 693px;
+  font-family: "Courier";
+}
+.matchesPage .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: 2px outset rgb(149, 149, 149);
+  padding: 0 15px;
+  font-size: 40px;
+}
+.matchesPage .navigation i {
+  color: rgb(255, 0, 104);
+}
+.header {
+  color: rgb(255, 0, 104);
+  margin-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.header p {
+  font-size: 30px;
+  letter-spacing: 1.3;
+  padding-left: 30px;
+}
+.header i {
+  padding-right: 50px;
+  font-size:20px;
+  padding-left: 20px;
+}
+.ranking ul {
+  list-style-type: none;
+  text-align: left;
+  background-color: white;
+  min-height: 550px;
+  font-size: 22px;
+}
+.ranking ul li {
+  padding: 25px 70px 10px 15px;
+  border-top: 2px solid rgb(248, 248, 248);
+}
+.ranking i  {
+    margin-left: 80px;
+    font-size: 20px;
+    margin: 20px 0;
 }

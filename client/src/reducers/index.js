@@ -1,13 +1,13 @@
 import buttonNo from './buttonNo'
-import buttonYes from './buttonYes'
+import updatePreferences from './updatePreferences'
 import randomImage from './randomImage'
-import randomImage1 from './randomImage1'
-import updatePreferences from './buttonYes'
+import concatImages from './concatImages'
+import fetchUser from './fetchUser'
 
 export default {
 	buttonNo,
-	buttonYes,
 	randomImage,
-	randomImage1,
-	updatePreferences
+	concatImages,
+	updatePreferences,
+	fetchUser
 }
