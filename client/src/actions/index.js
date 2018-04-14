@@ -1,4 +1,3 @@
-//export const BUTTON_YES = "BUTTON_YES"
 export const BUTTON_NO = "BUTTON_NO"
 export const FETCHED_IMAGES_SUCCESS = "FETCHED_IMAGES_SUCCESS"
 export const CONCAT_IMAGES = "CONCAT_IMAGES"
